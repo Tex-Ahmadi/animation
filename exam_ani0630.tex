@@ -1,0 +1,51 @@
+% M.Ahmadi 1401.06.30
+% @Tex_Ahmadi
+\documentclass{beamer}
+
+\usetheme{PaloAlto}
+\usecolortheme[named=purple]{structure}
+\usepackage{animate}
+\usepackage{tcolorbox} 
+
+\usepackage{xepersian}
+\settextfont{Yas} 
+\usepackage{ptext} 
+
+\title{یک اسلاید نمونه}
+\subtitle{زیرعنوان اسلاید}
+\author{مجتبیٰ احمدی}
+\institute{پیام‌نو‌ر مشگین شهر}
+\date{\today}
+\logo{\includegraphics[scale=0.09]{ahmadi-logo}}
+
+\newtcolorbox{mybox}[3][]{colframe=#2!25,colback=#2!10,coltitle=#2!20!black,title={#3},#1}
+
+\newcommand{\newani}[2]{%
+\begin{animateinline}[autoplay,loop]{2}
+\begin{mybox}{red}{#1}
+#2
+\end{mybox}
+\newframe
+\begin{mybox}{blue}{#1}
+#2
+\end{mybox}
+\end{animateinline}}
+
+\begin{document}
+
+\begin{frame}{انیمیشن}
+\newani{نسخه بسته}{%
+\begin{latin}
+This is typeset by \textsf{bidi} package, \bidiversion, \bididate.
+\\
+This is typeset by \textsf{\XePersian} package,\xepersianversion,\xepersiandate.
+\end{latin}
+}
+\begin{center}
+\textcolor{magenta}{@Tex\_Ahmadi}
+\end{center}
+\newani{عنوان}{\ptext[1]}
+
+\end{frame}
+
+\end{document}
